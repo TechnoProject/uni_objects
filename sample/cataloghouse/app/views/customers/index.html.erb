@@ -1,0 +1,33 @@
+<h1>顧客一覧</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>氏名</th>
+    <th>誕生日</th>
+    <th>性別</th>
+    <th colspan=3>操作</th>
+  </tr>
+
+<% @customers.each do |customer| %>
+  <tr>
+    <td><%= customer.id %></td>
+    <td><%= customer.last_name + " " + customer.first_name %></td>
+    <td><%= show_dob( customer.dob ) %></td>
+    <td><%= show_gender( customer.gender ) %></td>
+    <td><%= link_to '詳細', customer_path(customer.id) %></td>
+    <td><%= link_to '編集', edit_customer_path(customer) %></td>
+    <!--
+    <td><%= link_to '編集', edit_customer_path(customer.id) %></td>
+    <td><%= link_to '編集', { :action=>"edit", :controller=>"customers", :id=>1 } %></td>
+    -->
+    <td><%= link_to '削除', customer, method: :delete, data: { confirm: '本当に削除してよろしいですか。' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '新規作成', new_customer_path %>
+
+

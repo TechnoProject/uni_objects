@@ -1,0 +1,12 @@
+<h1>Users#show</h1>
+<p id="notice"><%= notice %></p>
+
+<p><table>
+  <tr><th>ID</th><td><%=h @user.id %></td></tr>
+  <tr><th>氏名</th><td><%=h "#{@user.last_name} #{@user.first_name}" %></td></tr>
+  <tr><th>性別</th><td><%=h show_gender( @user.gender ) %></td></tr>
+  <tr><th>誕生日</th><td><%=h show_dob( @user.dob ) %></td></tr>
+</table></p>
+
+<%= link_to '編集', edit_user_path(@user) %>
+<%= link_to '戻る', users_path %>

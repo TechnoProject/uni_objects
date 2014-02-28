@@ -1,0 +1,4 @@
+SUBROUTINE (result1)
+  result1=result1:" subcall ":result1
+RETURN
+

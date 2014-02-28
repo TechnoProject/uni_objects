@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p><table>
+  <tr><th>ID</th><td><%=h @customer.id %></td></tr>
+  <tr><th>氏名</th><td><%=h "#{@customer.last_name} #{@customer.first_name}" %></td></tr>
+  <tr><th>性別</th><td><%=h show_gender( @customer.gender ) %></td></tr>
+  <tr><th>誕生日</th><td><%=h show_dob( @customer.dob ) %></td></tr>
+</table></p>
+
+<p><table>
+  <tr>
+    <th>受注ID</th>
+    <th>SPFL</th>
+    <th>行番</th>
+    <th>製品番号</th>
+    <th>色サイズ１</th>
+    <th>色サイズ２</th>
+    <th>受注処理区分</th>
+  </tr>
+  <% if @customer.a1_mv.length > 1 || @customer.a1_mv['A1_MS'] %>
+  <%=raw show_a1_mv( @customer.a1_mv ) %>
+  <% end %>
+</table></p>
+
+<!--
+<%= link_to '編集', edit_customer_path(@customer) %> |
+//-->
+編集 |
+<%= link_to '戻る', customers_path %>

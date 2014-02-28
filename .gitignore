@@ -1,0 +1,12 @@
+Gemfile.lock
+*.gem
+*.rbc
+.bundle
+doc/yardoc
+.yardoc
+coverage
+tmp
+pkg
+lib/uni_objects/1.9/
+lib/uni_objects/2.0/
+vendor/bundle
